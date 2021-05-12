@@ -1,0 +1,14 @@
+.left,.right,.middle{
+    height: 100%;
+}
+.left{
+    width: 200px;
+    float: left;
+}
+.right{
+    width: 200px;
+    float: right;
+}
+.middle{
+    margin: 0 200px;
+}

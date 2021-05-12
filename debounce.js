@@ -18,6 +18,14 @@ function debounce(func,time){
     }
 }
 
+function debounce1(func,time){
+    let timeId = null
+    return function(...arg){
+        if(timeId) clearTimeout(timeId)
+        func.apply(this,arg)
+    }
+}
+
 // version 1.0
 function debounce(func,time){
     let timerId = null;
@@ -40,3 +48,8 @@ function debounce(func,time){
         }
     }
 }
+function test(...arg){
+    console.log(arg)
+}
+
+test(1,2,3)

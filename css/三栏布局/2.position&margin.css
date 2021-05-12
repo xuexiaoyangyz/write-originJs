@@ -1,0 +1,19 @@
+.container{
+    position: relative;
+}
+.left,.right {
+    position: absolute;
+    top: 0;
+    width: 200px;
+    height: 80vh;
+}
+.left{
+    left: 0;
+}
+.right{
+    right: 0;
+}
+.middle{
+    margin: 0 200px;
+    height: 80vh;
+}

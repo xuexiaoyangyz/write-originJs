@@ -18,7 +18,7 @@ function await(timer,text){
     })
 }
 /**
- * 1.执行next的时候 会在碰到第一个yield的时候停住，并执行之后的逻辑
+ * 1. 执行next的时候 会在碰到第一个yield的时候停住，并执行之后的逻辑
  * 2. next()的返回值，就是之后逻辑的返回值
  * 3. next()的参数 为 yield 返回值赋给 前面变量的值
  */
@@ -55,7 +55,7 @@ asyncFun()
  * @param {genterator} genF 
  * 传入的是一个genterator方法，高阶函数，赋予genterator自动执行的能力
  * 该函数返回一个promise ->只是为了 async函数返回一个promise对象，用resolve来进行跳出迭代。
- * 调用generator函数得到一个interator对象
+ * 调用generator函数得到一个iterator对象
  * step函数接受 gen.next()方法 进行每次调用 ->用try catch包裹，如果报错则 reject
  * 递归终止条件为 generator对象所有next() 执行完毕
  * next = nextF() 其实已经在执行yeild后面的内容，如果是异步的话，next的value会是一个promise对象。

@@ -1,0 +1,15 @@
+/* @import "2.position&margin.css"; */
+@import "3.float&margin.css";
+.container{
+    width: auto;
+    height: 80vh;
+}
+.left{
+    background-color: lightgrey;
+}
+.right{
+    background-color: lightpink;
+}
+.middle{
+    background-color: lightseagreen;
+}

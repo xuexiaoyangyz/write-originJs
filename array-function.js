@@ -29,9 +29,9 @@ Array.prototype.myReduce = function (fn,first){
     return result
  }
 
- let arr = [[0, 1], [2, 3], [4,[5,6,7]]]
+let arr = [[0, 1], [2, 3], [4,[5,6,7]]]
 const newArr = function(arr){
-   return arr.myReduce((pre,cur)=>pre.concat(Array.isArray(cur)?newArr(cur):cur),[])
+   return arr.myReduce((pre,cur)=>pre.push(Array.isArray(cur)?newArr(cur):cur),[])
 }
 console.log(newArr(arr)); //[0, 1, 2, 3, 4, 5, 6, 7]
 
@@ -81,7 +81,7 @@ console.log(t)
 
 /**
  * bind
- * 返回一个新的函数，执行时，this指向传入的第一个参数， 新的函数继承bing时传入的其他参数
+ * 返回一个新的函数，执行时，this指向传入的第一个参数， 新的函数继承bind时传入的其他参数
  * 
  */
 
@@ -138,3 +138,40 @@ function myInstanceof(left, right){
         parentProto = Object.getPrototypeOf(parentProto)
     }
 }
+
+/**
+ * call 实现
+ * 主要是参数的收集，和改变函数的this指向
+ * 
+ */
+Function.prototype.myCall = function (thisArg = window,...arg) {
+    if(typeof this !== 'function'){
+        throw new TypeError('this is not a function')
+    }
+    const fn = Symbol('thisFn')
+    thisArg[fn] = this
+    const result = thisArg[fn](...arg)
+    delete thisArg[fn]
+    return result
+}
+
+/**
+ * 深拷贝
+ *   数组对象，做统一处理
+ * 用for in 循环
+ */
+function deepCopy(obj){
+    const result = Array.isArray(obj) ? [] : {}
+
+    for (const key in object) {
+        if (Object.hasOwnProperty.call(object, key)) {
+            if(typeof object[key] === 'object' && object.key !== null){
+                result[key] = deepCopy(object[key])
+            }else{
+                result[key] = object[key]
+            }
+        }
+    }
+    return result
+}
+

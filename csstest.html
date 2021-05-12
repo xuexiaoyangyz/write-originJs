@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css</title>
+</head>
+<body>
+    <style>
+        
+        .parent {
+            background-color: aquamarine;
+            /* display: flex; */
+            /* width: 100vw;
+            height: 100vh; */
+            overflow: hidden;
+            padding-left: 420px;
+            padding-right: 420px;
+        }
+        .left {
+            background-color: red;
+            width: 400px;
+            height: 400px;
+            float: left;
+            margin-left: -100%;
+            position: relative;
+            left: -420px;
+        }
+        .right{
+            background-color: silver;
+            height: 400px;
+            width: 400px;
+            float: left;
+            margin-left: -400px;
+            position: relative;
+            left: 420px;
+            /* overflow: auto; */
+        }
+        .content{
+            background-color: yellow;
+            height: 500px;
+            width: 100%;
+            float: left;
+        }
+        .content,.left,.right {
+            padding-bottom: 10000px;
+            margin-bottom: -10000px;
+        }
+    </style>
+    <div class="parent">
+        <div class="content"></div>
+        <div class="left"></div>
+        
+        <div class="right"></div>
+        
+    </div>
+</body>
+</html>
